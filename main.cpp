@@ -18,8 +18,8 @@ void initDatabase() {
         exit(1);
     }
 
-    string* transactionTable = new string("CREATE TABLE IF NOT EXISTS transactions (id INTEGER PRIMARY KEY, date TEXT, amount FLOAT, description TEXT)");
-    rc = sqlite3_exec(db, transactionTable->c_str(), nullptr, nullptr, &errMsg);
+    string transactionTable = "CREATE TABLE IF NOT EXISTS transactions (id INTEGER PRIMARY KEY, date TEXT, amount FLOAT, description TEXT)";
+    rc = sqlite3_exec(db, transactionTable.c_str(), nullptr, nullptr, &errMsg);
     if (rc != SQLITE_OK) {
         cout << "Error creating table: " << errMsg << endl;
         sqlite3_free(errMsg);
@@ -27,7 +27,6 @@ void initDatabase() {
         exit(1);
     }
 
-    delete transactionTable;
     sqlite3_close(db);
 }
 
@@ -37,24 +36,22 @@ int main() {
 
     initDatabase();
 
-    string* action = new string;
+    string action;
     bool exit = false;
 
     // main program loop
     while (!exit) {
         cout << "> ";
-        cin >> *action;
+        cin >> action;
 
-        if (*action == "add") {
+        if (action == "add") {
 
         }
 
-        if (*action == "exit") {
+        if (action == "exit") {
             exit = true;
         }
     }
 
-    // cleanup
-    delete action;
     return 0;
 }
