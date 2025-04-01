@@ -34,13 +34,15 @@ sqlite3* initDatabase() {
 int main() {
     sqlite3* db = initDatabase();
 
+    clear();
+    cout << "Welcome to Persa\n" << endl;
+    cout << "'help' for a list of commands, 'exit' to quit." << endl;
+
     string action;
     bool exit = false;
 
     // main program loop
     while (!exit) {
-        clear();
-        cout << "PERSA\n" << endl;
         cout << "> ";
         cin >> action;
 
@@ -48,6 +50,7 @@ int main() {
             string date;
             float amount;
             string description;
+            
             clear();
             cout << "ADD A NEW TRANSACTION\n" << endl;
             cout << "Amount:            "; cin >> amount;
@@ -68,6 +71,9 @@ int main() {
         if (action == "exit") {
             exit = true;
         }
+
+        clear();
+        cout << "Persa\n" << endl;
     }
 
     return 0;
