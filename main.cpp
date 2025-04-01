@@ -1,4 +1,5 @@
 #include <iostream>
+#include <string>
 #include <sqlite3.h>
 
 using namespace std;
@@ -7,7 +8,7 @@ void clear() {
     system("clear");
 }
 
-void initDatabase() {
+sqlite3* initDatabase() {
     sqlite3* db;
     char *errMsg = nullptr;
     
@@ -27,25 +28,41 @@ void initDatabase() {
         exit(1);
     }
 
-    sqlite3_close(db);
+    return db;
 }
 
 int main() {
-    clear();
-    cout << "the start of something i guess" << endl;
-
-    initDatabase();
+    sqlite3* db = initDatabase();
 
     string action;
     bool exit = false;
 
     // main program loop
     while (!exit) {
+        clear();
+        cout << "PERSA\n" << endl;
         cout << "> ";
         cin >> action;
 
         if (action == "add") {
+            string date;
+            float amount;
+            string description;
+            clear();
+            cout << "ADD A NEW TRANSACTION\n" << endl;
+            cout << "Amount:            "; cin >> amount;
+            cout << "Date (DD/MM/YYYY): "; cin >> date;
+            cout << "Description:       "; cin >> description;
 
+            string addTrans = "INSERT INTO transactions (date, amount, description) VALUES ('" + date + "', " + to_string(amount) + ", '" + description + "')";
+            char *errMsg = nullptr;
+            int rc = sqlite3_exec(db, addTrans.c_str(), nullptr, nullptr, &errMsg);
+            if (rc != SQLITE_OK) {
+                cout << "Error adding transaction: " << errMsg << endl;
+                sqlite3_free(errMsg);
+            } else {
+                cout << "Transaction added" << endl;
+            }
         }
 
         if (action == "exit") {
