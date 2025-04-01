@@ -2,7 +2,16 @@
 
 using namespace std;
 
+void clear() {
+    system("cls");
+}
+
+void initDatabase() {
+    
+}
+
 int main() {
+    clear();
     cout << "the start of something i guess" << endl;
 
     string* action = new string;
@@ -12,6 +21,10 @@ int main() {
     while (!exit) {
         cout << "> ";
         cin >> *action;
+
+        if (*action == "add") {
+
+        }
 
         if (*action == "exit") {
             exit = true;
