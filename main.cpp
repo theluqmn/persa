@@ -5,12 +5,20 @@ using namespace std;
 int main() {
     cout << "the start of something i guess" << endl;
 
-    string* name = new string;
+    string* action = new string;
+    bool exit = false;
 
-    cout << "what is your name?" << endl;
-    cin >> *name;
-    cout << "hello " << *name << endl;
-    delete name;
+    // main program loop
+    while (!exit) {
+        cout << "> ";
+        cin >> *action;
 
+        if (*action == "exit") {
+            exit = true;
+        }
+    }
+
+    // cleanup
+    delete action;
     return 0;
 }
