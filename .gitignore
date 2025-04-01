@@ -1,2 +1,3 @@
-.gitingore
 *.exe
+*.db
+main
