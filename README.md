@@ -1,3 +1,3 @@
 # Persa
 
-very epic project
+i have no idea anymore
