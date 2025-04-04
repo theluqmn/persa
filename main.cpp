@@ -1,12 +1,9 @@
 #include <iostream>
 #include <string>
 #include <sqlite3.h>
+#include "utils/utils.h"
 
 using namespace std;
-
-void clear() {
-    system("clear");
-}
 
 sqlite3* initDatabase() {
     sqlite3* db;
@@ -14,7 +11,7 @@ sqlite3* initDatabase() {
     
     int rc = sqlite3_open("./finances.db", &db);
     if (rc) {
-        cout << "Error opening database: " << sqlite3_errmsg(db) << endl;
+        error("Error opening database: " + string(sqlite3_errmsg(db)));
         sqlite3_close(db);
         exit(1);
     }
@@ -22,7 +19,7 @@ sqlite3* initDatabase() {
     string transactionTable = "CREATE TABLE IF NOT EXISTS transactions (id INTEGER PRIMARY KEY, date TEXT, amount FLOAT, description TEXT)";
     rc = sqlite3_exec(db, transactionTable.c_str(), nullptr, nullptr, &errMsg);
     if (rc != SQLITE_OK) {
-        cout << "Error creating table: " << errMsg << endl;
+        error("Error creating transactions table in database: " + string(errMsg));
         sqlite3_free(errMsg);
         sqlite3_close(db);
         exit(1);
@@ -46,31 +43,7 @@ int main() {
         cout << "> ";
         cin >> action;
 
-        if (action == "add") {
-            string date;
-            float amount;
-            string description;
-            
-            clear();
-            cout << "ADD A NEW TRANSACTION\n" << endl;
-            cout << "Amount:            "; cin >> amount;
-            cout << "Date (DD/MM/YYYY): "; cin >> date;
-            cout << "Description:       "; cin >> description;
-
-            string addTrans = "INSERT INTO transactions (date, amount, description) VALUES ('" + date + "', " + to_string(amount) + ", '" + description + "')";
-            char *errMsg = nullptr;
-            int rc = sqlite3_exec(db, addTrans.c_str(), nullptr, nullptr, &errMsg);
-            if (rc != SQLITE_OK) {
-                cout << "Error adding transaction: " << errMsg << endl;
-                sqlite3_free(errMsg);
-            } else {
-                cout << "Transaction added" << endl;
-            }
-        }
-
-        if (action == "exit") {
-            exit = true;
-        }
+        if (action == "exit") { exit = true; }
 
         clear();
         cout << "Persa\n" << endl;
