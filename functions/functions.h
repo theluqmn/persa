@@ -1,3 +1,4 @@
+// functions for the program's logic
 #ifndef FUNCTIONS_H
 #define FUNCTIONS_H
 
