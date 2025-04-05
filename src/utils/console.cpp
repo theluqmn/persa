@@ -42,13 +42,3 @@ void info(string message) { cout << BLUE << BOLD    << "INFO:       " << RESET <
 void format(string message, string color = "", string background = "", string style = "") {
     cout << color << background << style << message << RESET << endl;
 }
-
-// testing use only
-int main() {
-    clear();
-    error("This is an error message.");
-    warn("This is a warning message.");
-    info("This is an info message.");
-    format("This is a formatted message.", BLACK, BG_WHITE);
-    return 0;
-}
