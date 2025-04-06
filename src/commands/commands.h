@@ -5,4 +5,4 @@ using namespace std;
 
 void cli();
 
-#endif COMMANDS_H
+#endif
