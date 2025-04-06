@@ -39,6 +39,6 @@ void warn(string message) { cout << YELLOW << BOLD  << "WARNING:    " << RESET <
 void info(string message) { cout << BLUE << BOLD    << "INFO:       " << RESET << message << RESET << endl; }
 
 // custom formatted output functions
-void print(string message, string color, string background, string style) {
+void format(string message, string color, string background, string style) {
     cout << color + background + style + message + RESET << endl;
 }

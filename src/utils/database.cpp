@@ -22,7 +22,7 @@ sqlite3* initDatabase(const char* database) {
         }
 
     } else if (database == "transactions.db") {
-        string transactions = "CREATE TABLE IF NOT EXISTS transactions (id INTEGER PRIMARY KEY, date TEXT, description TEXT, amount FLOAT)";
+        string transactions = "CREATE TABLE IF NOT EXISTS transactions (id INTEGER PRIMARY KEY, date TEXT, note TEXT, amount FLOAT)";
         rc = sqlite3_exec(db, transactions.c_str(), NULL, NULL, NULL);
         if (rc) {
             error("creating transactions table: " + string(sqlite3_errmsg(db)));
