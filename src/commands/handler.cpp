@@ -1,6 +1,7 @@
 #include <iostream>
 #include <sqlite3.h>
 #include "../utils/utils.h"
+#include "commands.h"
 
 using namespace std;
 
@@ -20,6 +21,8 @@ void cli() {
         if (action == "exit") {
             print(format("Exiting... bai bai", "blue", "", ""));
             exit = true;
+        } else if (action == "add") {
+            promptAdd();
         } else {
             print(format("Unknown command: '" + action + "'", "red", "", "bold"));
         }
