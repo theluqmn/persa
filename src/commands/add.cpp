@@ -28,7 +28,7 @@ void prompt_add() {
     string date, note;
     float amount;
 
-    print_fmt("Enter the transaction details:\n", "blue", "", "bold");
+    print_fmt("Enter the transaction details:\n\n", "blue", "", "bold");
     print_fmt("Enter 1 for inflow, 0 for outflow: ", "", "", "bold");
     cin >> inflow;
     print_fmt("Date " + format("(dd/mm/yyyy)", "", "", "dim") + ": ", "", "", "bold");
@@ -40,9 +40,9 @@ void prompt_add() {
 
     int status = execute(inflow, note, date, amount);
     if (!status) {
-        print_fmt("\nError adding transaction!", "red", "", "bold");
+        print_fmt("\nError adding transaction!\n", "red", "", "bold");
         return;
     }
 
-    print_fmt("\nTransaction added successfully!", "green", "", "bold");
+    print_fmt("\nTransaction added successfully!\n", "green", "", "bold");
 }

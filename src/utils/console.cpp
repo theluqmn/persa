@@ -67,7 +67,7 @@ void clear() { system("clear"); }
 void error(string message) { cout << RED << BOLD    << "ERROR:      " << RESET << message << RESET << endl; }
 void warn(string message) { cout << YELLOW << BOLD  << "WARNING:    " << RESET << message << RESET << endl; }
 void info(string message) { cout << BLUE << BOLD    << "INFO:       " << RESET << message << RESET << endl; }
-void print(string message) { cout << message << endl; }
+void print(string message) { cout << message; }
 void print_fmt(string message, string color, string background, string style) {
-    cout << format(message, color, background, style) << endl;
+    cout << format(message, color, background, style);
 }
