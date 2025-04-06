@@ -8,8 +8,8 @@ using namespace std;
 void cli() {
     clear();
     print(format("PERSA\n", "green", "", "bold") + "a simple CLI-based personal finance tracker\n");
-    printfmt("https://github.com/theluqmn/persa", "blue", "", "underline");
-    printfmt("Type 'help' for a list of available commands, or 'exit' to quit.", "", "", "dim");
+    print_fmt("https://github.com/theluqmn/persa", "blue", "", "underline");
+    print_fmt("Type 'help' for a list of available commands, or 'exit' to quit.", "", "", "dim");
 
     bool exit = false;
     string action;
@@ -22,7 +22,7 @@ void cli() {
             print(format("Exiting... bai bai", "blue", "", ""));
             exit = true;
         } else if (action == "add") {
-            promptAdd();
+            prompt_add();
         } else {
             print(format("Unknown command: '" + action + "'", "red", "", "bold"));
         }

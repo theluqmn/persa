@@ -11,9 +11,9 @@ void error(string message);
 void warn(string message);
 void info(string message);
 void print(string message);
-void printfmt(string message, string color, string background, string style);
+void print_fmt(string message, string color, string background, string style);
 string format(string message, string color = "", string background = "", string style = "");
 
-sqlite3* initDatabase(const char* database);
+sqlite3* init_main_db();
 
 #endif

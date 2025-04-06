@@ -4,6 +4,6 @@
 using namespace std;
 
 void cli();
-void promptAdd();
+void prompt_add();
 
 #endif

@@ -68,6 +68,6 @@ void error(string message) { cout << RED << BOLD    << "ERROR:      " << RESET <
 void warn(string message) { cout << YELLOW << BOLD  << "WARNING:    " << RESET << message << RESET << endl; }
 void info(string message) { cout << BLUE << BOLD    << "INFO:       " << RESET << message << RESET << endl; }
 void print(string message) { cout << message << endl; }
-void printfmt(string message, string color, string background, string style) {
+void print_fmt(string message, string color, string background, string style) {
     cout << format(message, color, background, style) << endl;
 }
