@@ -1,5 +1,4 @@
 #include <iostream>
-
 #include "commands/commands.h"
 
 using namespace std;

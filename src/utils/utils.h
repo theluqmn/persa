@@ -3,6 +3,7 @@
 #define UTILS_H
 
 #include <string>
+#include <sqlite3.h>
 using namespace std;
 
 void clear();
@@ -11,6 +12,6 @@ void warn(string message);
 void info(string message);
 void format(string message, string color = "", string background = "", string style = "");
 
-void initDatabase(const char* database);
+sqlite3* initDatabase(const char* database);
 
 #endif UTILS_H

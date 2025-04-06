@@ -19,7 +19,7 @@ echo "- Compilation took $compile_time seconds"
 echo "(3/3) Running..."
 echo ""
 run_time_start=$(date +%s.%N)
-./falcon
+./persa
 run_time_end=$(date +%s.%N)
 run_time=$(echo "$run_time_end - $run_time_start" | bc)
 echo ""
