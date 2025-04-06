@@ -6,7 +6,9 @@ using namespace std;
 
 void cli() {
     clear();
-    print(format("Persa", "red", "", "underline") + " - a simple CLI-based personal finance tracker");
+    print(format("PERSA\n", "green", "", "bold") + "a simple CLI-based personal finance tracker\n");
+    print(format("https://github.com/theluqmn/persa", "blue", "", "underline"));
+    print(format("Type 'help' for a list of available commands, or 'exit' to quit.", "", "", "dim"));
 
     bool exit = false;
     string action;
@@ -15,10 +17,11 @@ void cli() {
         cout << "> ";
         cin >> action;
 
-        if (action == "exit") { exit = true; }
-        else if (action == "add") {}
-
-        clear();
-        cout << "Persa\n" << endl;
+        if (action == "exit") {
+            print(format("Exiting... bai bai", "blue", "", ""));
+            exit = true;
+        } else {
+            print(format("Unknown command: '" + action + "'", "red", "", "bold"));
+        }
     }
 }
