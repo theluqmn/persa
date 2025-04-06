@@ -32,13 +32,6 @@ const string UNDERLINE = "\033[4m";
 const string BLINK = "\033[5m";
 const string REVERSE = "\033[7m";
 
-// text functions
-void clear() { system("clear"); }
-void error(string message) { cout << RED << BOLD    << "ERROR:      " << RESET << message << RESET << endl; }
-void warn(string message) { cout << YELLOW << BOLD  << "WARNING:    " << RESET << message << RESET << endl; }
-void info(string message) { cout << BLUE << BOLD    << "INFO:       " << RESET << message << RESET << endl; }
-void print(string message) { cout << message << endl; }
-
 // custom formatted output functions
 string format(string message, string color, string background, string style) {
     if (color == "black") color = BLACK;
@@ -67,4 +60,14 @@ string format(string message, string color, string background, string style) {
     else if (style == "reverse") style = REVERSE;
     
     return color + background + style + message + RESET;
+}
+
+// text functions
+void clear() { system("clear"); }
+void error(string message) { cout << RED << BOLD    << "ERROR:      " << RESET << message << RESET << endl; }
+void warn(string message) { cout << YELLOW << BOLD  << "WARNING:    " << RESET << message << RESET << endl; }
+void info(string message) { cout << BLUE << BOLD    << "INFO:       " << RESET << message << RESET << endl; }
+void print(string message) { cout << message << endl; }
+void printfmt(string message, string color, string background, string style) {
+    cout << format(message, color, background, style) << endl;
 }

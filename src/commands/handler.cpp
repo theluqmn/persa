@@ -7,8 +7,8 @@ using namespace std;
 void cli() {
     clear();
     print(format("PERSA\n", "green", "", "bold") + "a simple CLI-based personal finance tracker\n");
-    print(format("https://github.com/theluqmn/persa", "blue", "", "underline"));
-    print(format("Type 'help' for a list of available commands, or 'exit' to quit.", "", "", "dim"));
+    printfmt("https://github.com/theluqmn/persa", "blue", "", "underline");
+    printfmt("Type 'help' for a list of available commands, or 'exit' to quit.", "", "", "dim");
 
     bool exit = false;
     string action;
