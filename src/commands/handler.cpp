@@ -5,6 +5,8 @@ using namespace std;
 
 void cli() {
     clear();
+    cout << "Persa\n" << endl;
+
     bool exit = false;
     string action;
 
