@@ -4,7 +4,7 @@ I was bored, and needed to get back to coding actively - so I decided to make a 
 
 ## Features
 
-- add, edit, and delete transactions
+- add, edit, and delete transactions (only adding works atm)
 - create repeating transactions (in and out)
 - view all transactions
 - report on transactions for a duration of time
