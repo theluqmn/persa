@@ -6,7 +6,7 @@ using namespace std;
 
 void cli() {
     clear();
-    format("Persa", "BLUE", "", "");
+    cout << "Persa\n" << endl;
 
     bool exit = false;
     string action;

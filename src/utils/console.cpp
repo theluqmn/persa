@@ -40,5 +40,5 @@ void info(string message) { cout << BLUE << BOLD    << "INFO:       " << RESET <
 
 // custom formatted output functions
 void format(string message, string color, string background, string style) {
-    cout << color + background + style + message + RESET << endl;
+    cout << color << background << style << message << RESET << endl;
 }
