@@ -11,4 +11,6 @@ void warn(string message);
 void info(string message);
 void format(string message, string color = "", string background = "", string style = "");
 
+void initDatabase(const char* database);
+
 #endif UTILS_H
