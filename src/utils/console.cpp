@@ -37,8 +37,34 @@ void clear() { system("clear"); }
 void error(string message) { cout << RED << BOLD    << "ERROR:      " << RESET << message << RESET << endl; }
 void warn(string message) { cout << YELLOW << BOLD  << "WARNING:    " << RESET << message << RESET << endl; }
 void info(string message) { cout << BLUE << BOLD    << "INFO:       " << RESET << message << RESET << endl; }
+void print(string message) { cout << message << endl; }
 
 // custom formatted output functions
-void format(string message, string color, string background, string style) {
-    cout << color << background << style << message << RESET << endl;
+string format(string message, string color, string background, string style) {
+    if (color == "black") color = BLACK;
+    else if (color == "red") color = RED;
+    else if (color == "green") color = GREEN;
+    else if (color == "yellow") color = YELLOW;
+    else if (color == "blue") color = BLUE;
+    else if (color == "magenta") color = MAGENTA;
+    else if (color == "cyan") color = CYAN;
+    else if (color == "white") color = WHITE;
+
+    if (background == "black") background = BG_BLACK;
+    else if (background == "red") background = BG_RED;
+    else if (background == "green") background = BG_GREEN;
+    else if (background == "yellow") background = BG_YELLOW;
+    else if (background == "blue") background = BG_BLUE;
+    else if (background == "magenta") background = BG_MAGENTA;
+    else if (background == "cyan") background = BG_CYAN;
+    else if (background == "white") background = BG_WHITE;
+
+    if (style == "bold") style = BOLD;
+    else if (style == "dim") style = DIM;
+    else if (style == "italic") style = ITALIC;
+    else if (style == "underline") style = UNDERLINE;
+    else if (style == "blink") style = BLINK;
+    else if (style == "reverse") style = REVERSE;
+    
+    return color + background + style + message + RESET;
 }

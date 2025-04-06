@@ -6,7 +6,7 @@ using namespace std;
 
 void cli() {
     clear();
-    cout << "Persa\n" << endl;
+    print(format("Persa", "red", "", "underline") + " - a simple CLI-based personal finance tracker");
 
     bool exit = false;
     string action;
